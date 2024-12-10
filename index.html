@@ -1,7 +1,7 @@
 <html>
 <head>
   <style>
-     body{
+     body {
          text-align: center;
          background-image: linear-gradient(rgb(255, 0, 0 ), rgb(0, 0, 0 ), rgb(255, 255, 0 ));
          min-width: 100%;
@@ -9,74 +9,82 @@
          scroll-behavior: smooth; /* Smooth scrolling */
       }
       .bn30 {
-  border: 5em;
-  cursor: pointer;
-  outline: none;
-  font-size: 16px;
-  -webkit-transform: translate(0);
-  transform: translate(0);
-  background-image: linear-gradient(45deg, #4568dc, #b06ab3);
-  padding: 0.7em 2em;
-  border-radius: 65px;
-  box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.438);
-  -webkit-transition: box-shadow 0.25s;
-  transition: box-shadow 0.25s;
-  color: white;
-}
+        border: 5em;
+        cursor: pointer;
+        outline: none;
+        font-size: 16px;
+        -webkit-transform: translate(0);
+        transform: translate(0);
+        background-image: linear-gradient(45deg, #4568dc, #b06ab3);
+        padding: 0.7em 2em;
+        border-radius: 65px;
+        box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.438);
+        -webkit-transition: box-shadow 0.25s;
+        transition: box-shadow 0.25s;
+        color: white;
+      }
 
-.bn30 .text {
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-image: linear-gradient(45deg, #4568dc, #b06ab3);
-}
+      .bn30 .text {
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-image: linear-gradient(45deg, #4568dc, #b06ab3);
+      }
 
-.bn30:after {
-  content: "";
-  border-radius: 18px;
-  position: absolute;
-  margin: 4px;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  z-index: -1;
-  background: #0e0e10;
-}
+      .bn30:after {
+        content: "";
+        border-radius: 18px;
+        position: absolute;
+        margin: 4px;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: -1;
+        background: #0e0e10;
+      }
 
-.bn30:hover {
-  background-image: linear-gradient(-45deg, #4568dc, #b06ab3);
-  box-shadow: 0 12px 24px rgba(128, 128, 128, 0.1);
-}
+      .bn30:hover {
+        background-image: linear-gradient(-45deg, #4568dc, #b06ab3);
+        box-shadow: 0 12px 24px rgba(128, 128, 128, 0.1);
+      }
 
-.bn30:hover .text {
-  background-image: linear-gradient(-45deg, #4568dc, #b06ab3);
-}
+      .bn30:hover .text {
+        background-image: linear-gradient(-45deg, #4568dc, #b06ab3);
+      }
 
-h1{
- color: black;
-}
+      h1, p {
+        font-weight: bold; /* Makes the text bold */
+        color: blue; /* Changes text color to blue */
+        font-family: Arial, sans-serif;
+        text-shadow: 0 0 40px rgba(0, 0, 255, 1), 0 0 60px rgba(0, 0, 255, 1), 0 0 80px rgba(0, 0, 255, 1), 0 0 100px rgba(0, 0, 255, 1), 0 0 120px rgba(0, 0, 255, 1); /* Glowing blue effect */
+      }
 
-/* Back to Top Button styles */
-#backToTopBtn {
-    display: none; /* Initially hidden */
-    position: fixed;
-    bottom: 20px;
-    right: 30px;
-    z-index: 99;
-    font-size: 18px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    padding: 15px;
-    cursor: pointer;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
+      /* Video glow effect */
+      iframe {
+        box-shadow: 0 0 30px rgba(255, 0, 0, 1), 0 0 40px rgba(255, 0, 0, 1), 0 0 50px rgba(255, 0, 0, 1), 0 0 60px rgba(255, 0, 0, 1); /* Red glow */
+      }
 
-#backToTopBtn:hover {
-    background-color: #0056b3;
-}
+      /* Back to Top Button styles */
+      #backToTopBtn {
+          display: none; /* Initially hidden */
+          position: fixed;
+          bottom: 20px;
+          right: 30px;
+          z-index: 99;
+          font-size: 18px;
+          background-color: #007bff;
+          color: white;
+          border: none;
+          border-radius: 50%;
+          padding: 15px;
+          cursor: pointer;
+          box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      #backToTopBtn:hover {
+          background-color: #0056b3;
+      }
   </style>
 </head>
 
@@ -84,12 +92,19 @@ h1{
 
 <h1>Manchester United</h1>
 
-
 <!-- Added button to go to Manchester United website -->
 <button class="bn30" onclick="window.location.href='https://www.manutd.com/'">Manchester United Website</button><br><br>
 
-<img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/7a/Manchester_United_FC_crest.svg/640px-Manchester_United_FC_crest.svg.png" width="400px"><br><br>
+<!-- Added Manchester United story paragraph -->
+<p>
+    Manchester United Football Club, founded in 1878 as Newton Heath, is one of the most successful and popular football clubs in the world. The club changed its name to Manchester United in 1902 after being saved from financial troubles and has since become a symbol of English football excellence. United’s glory years began in the 1950s under manager Sir Matt Busby, who led the team to success with players like George Best and Bobby Charlton. Their rise was tragically interrupted by the Munich air disaster in 1958, which claimed the lives of several players. However, United rebuilt and went on to dominate English football.
 
+    Under Sir Alex Ferguson, who managed the club from 1986 to 2013, Manchester United reached the pinnacle of club football, winning numerous domestic and international trophies. The club has won a record 20 English top-flight titles, including 13 Premier League titles, making them the most successful club in England. They have also won 12 FA Cups, 4 League Cups, 3 UEFA Champions League titles, and 1 FIFA Club World Cup. Other notable trophies include the UEFA Cup Winners' Cup, the UEFA Europa League, and several Community Shields. Manchester United's rich history, coupled with its passionate fanbase, makes it one of the most celebrated and iconic football clubs globally.
+</p><br>
+
+<img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/7a/Manchester_United_FC_crest.svg/640px-Manchester_United_FC_crest.svg.png" alt="Manchester United Logo"><br><br>
+
+<!-- YouTube Video with Red Glow -->
 <iframe width="560" height="315" src="https://www.youtube.com/embed/S3ffh04YOZk?si=TBhDxNCKMVmv8Hvh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <!-- Back to Top Button -->
@@ -120,11 +135,9 @@ h1{
 <br>
 <br>
 
-<p>
+<p>If you want to play as Manchester United, I recommend playing FC25 for the best experience.</p>
 
-</p>If you want to play as Manchester untited, I recomend playing FC25 or fifa 24 for the best experience.
-
-<button class="bn30" onclick="window.location.href='https://www.ea.com/games/ea-sports-fc'">FC25 website </button><br><br>
+<button class="bn30" onclick="window.location.href='https://www.ea.com/games/ea-sports-fc'">FC25 website</button><br><br>
 
 </body>
 </html>
