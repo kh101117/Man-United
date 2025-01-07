@@ -3,11 +3,33 @@
   <style>
      body {
          text-align: center;
-         background-image: linear-gradient(rgb(255, 0, 0 ), rgb(0, 0, 0 ), rgb(255, 255, 0 ));
+         background-image: linear-gradient(rgb(255, 0, 0), rgb(0, 0, 0)); /* Red and black background */
          min-width: 100%;
          min-height: 100%;
          scroll-behavior: smooth; /* Smooth scrolling */
+         transition: background-color 0.3s ease, color 0.3s ease;
+     }
+
+     .dark-mode {
+         background-image: linear-gradient(rgb(0, 0, 0), rgb(30, 30, 30)); /* Darker background in dark mode */
+         color: red; /* Change text color to red in dark mode */
+     }
+
+     .light-mode {
+         background-image: linear-gradient(rgb(255, 0, 0), rgb(0, 0, 0)); /* Red and black background for light mode */
+         color: yellow; /* Change text color to yellow in light mode */
+     }
+
+      .dark-mode h1, .dark-mode p {
+         color: red; /* Ensure h1 and p text is red in dark mode */
+         text-shadow: 0 0 10px rgba(255, 0, 0, 1), 0 0 20px rgba(255, 0, 0, 1), 0 0 30px rgba(255, 0, 0, 1); /* Red glow */
       }
+
+      .light-mode h1, .light-mode p {
+         color: yellow; /* Ensure h1 and p text is yellow in light mode */
+         text-shadow: 0 0 10px rgba(255, 255, 0, 1), 0 0 20px rgba(255, 255, 0, 1), 0 0 30px rgba(255, 255, 0, 1); /* Yellow glow */
+      }
+
       .bn30 {
         border: 5em;
         cursor: pointer;
@@ -55,7 +77,6 @@
 
       h1, p {
         font-weight: bold; /* Makes the text bold */
-        color: blue; /* Changes text color to blue */
         font-family: Arial, sans-serif;
         text-shadow: none; /* Removes the glow effect */
       }
@@ -85,10 +106,52 @@
       #backToTopBtn:hover {
           background-color: #0056b3;
       }
+
+      /* Dark/Light Mode Toggle Button */
+      .theme-toggle {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: #f1f1f1;
+        border: 5px solid #bbb;
+        border-radius: 50%;
+        font-size: 3rem;
+        width: 60px; /* Make width equal to height */
+        height: 60px; /* Ensure height matches width to make it a perfect circle */
+        padding: 0; /* Remove padding to keep it a perfect circle */
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+        z-index: 100;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .theme-toggle:hover {
+        transform: scale(1.1); /* Slightly enlarge the button on hover */
+        box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+      }
+
+      .moon-icon {
+        display: block;
+      }
+
+      .sun-icon {
+        display: none;
+      }
+
+      .dark-mode .moon-icon {
+        display: none;
+      }
+
+      .dark-mode .sun-icon {
+        display: block;
+      }
   </style>
 </head>
 
-<body>
+<body class="light-mode">
 
 <h1>Manchester United</h1>
 
@@ -96,8 +159,6 @@
 <button class="bn30" onclick="window.location.href='https://www.manutd.com/'">Manchester United Website</button><br><br>
 
 <!-- Added Manchester United story paragraph -->
-
-
 <img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/7a/Manchester_United_FC_crest.svg/640px-Manchester_United_FC_crest.svg.png" alt="Manchester United Logo"><br><br>
 
 <p>
@@ -112,7 +173,38 @@
 <!-- Back to Top Button -->
 <button onclick="topFunction()" id="backToTopBtn" title="Go to top">↑</button>
 
+<!-- Theme Toggle Button -->
+<button id="theme-toggle" class="theme-toggle">
+    <i id="icon" class="moon-icon">&#9789;</i>
+    <i class="sun-icon">&#9733;</i>
+</button>
+
 <script>
+    // Dark Mode and Light Mode Toggle Logic
+    const toggleButton = document.getElementById('theme-toggle');
+    const icon = document.getElementById('icon');
+    const body = document.body;
+
+    // Check for saved theme in localStorage
+    const currentTheme = localStorage.getItem('theme');
+    if (currentTheme === 'dark') {
+        body.classList.add('dark-mode');
+        body.classList.remove('light-mode');
+        icon.innerHTML = '&#9733;'; // Sun icon for dark mode
+    }
+
+    toggleButton.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+        body.classList.toggle('light-mode');
+        if (body.classList.contains('dark-mode')) {
+            icon.innerHTML = '&#9733;'; // Sun icon for dark mode
+            localStorage.setItem('theme', 'dark'); // Save dark mode to localStorage
+        } else {
+            icon.innerHTML = '&#9789;'; // Moon icon for light mode
+            localStorage.setItem('theme', 'light'); // Save light mode to localStorage
+        }
+    });
+
     // Get the button
     let mybutton = document.getElementById("backToTopBtn");
 
@@ -133,6 +225,7 @@
         });
     }
 </script>
+
 <br>
 <br>
 <br>
